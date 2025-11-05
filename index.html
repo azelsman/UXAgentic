@@ -7,14 +7,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
+  <script src="js/global.js" defer></script>
 <body>
-  <header class="site-header">
-    <div class="nav-container">
-        <a href="#">
-          <img class="logo" src="img/UXAgentic-logo.png" alt="UX Agentic logo">
-        </a>
-        <a class="text-link" href="#contact">Let's Connect</a>
-      </div>
+  <header id="header" role="banner">
   </header>
 
   <main id="main" class="main">
@@ -87,12 +82,12 @@
             <div class="col-left">
                 <p class="body">
                     Most organizations are swimming in research, but starving for clarity.
-                    <br>
                     They have the data — but not the model that connects it.
                 </p>
 
                 <p class="body">
-                    <strong>Experience Modeling is that missing bridge.</strong><br>
+                    <strong>Experience Modeling is that missing bridge.</strong>
+                
                     It transforms disjointed findings into a living map of human understanding — showing how people
                     think, feel, and behave, and how your product should respond.
                 </p>
@@ -129,8 +124,14 @@
         </div>
     </section>    
     
-    <!-- Why it works -->
+    <!-- Why it works -->  
    <section class="frame section section-why" aria-labelledby="why-title">
+    <div class="card-grid" role="list" aria-label="Context images">
+        <div class="img-card">
+            <img class="card-image" src="img/UXa-infographic.jpg" alt="Experience Modeling Infographic" />
+            
+        </div>
+    </div>
     <h2 id="why-title" class="h2">Why it works.</h2>
 
     <p class="body lead">
@@ -139,20 +140,29 @@
         so teams can design with confidence, not guesswork.
     </p>
 
-    <p class="body line-break">
-        Grounded in two decades of UX leadership and powered by AI synthesis, it bridges the gap between
-        human empathy and business precision.<br>
-        The framework identifies what users truly need, where teams misalign, and how each decision impacts
-        the customer and the company.
-    </p>
+    <div class="line-break">
+        <p class="body">
+            Grounded in two decades of UX leadership and powered by AI synthesis, it bridges the gap between
+            human empathy and business precision.</p>
+            <p class="body">
+            The framework identifies what users truly need, where teams misalign, and how each decision impacts
+            the customer and the company.
+        </p>
+    </div>
 
-    <p class="body line-break">
-        But what makes it different is how it lives.<br>
-        Experience Modeling creates a living, real-time model of human understanding — a system teams can
-        query, visualize, and refine together.<br>
-        It becomes an interactive source of truth that evolves as products, markets, and behaviors do —
-        helping teams see not just what happened, but why it happened and what will happen next.
-    </p>
+    <div class="line-break">
+        <p class="body">
+            But what makes it different is how it lives.
+        </p>
+        <p class="body">
+            Experience Modeling creates a living, real-time model of human understanding — a system teams can
+            query, visualize, and refine together.
+        </p>
+        <p class="body">
+            It becomes an interactive source of truth that evolves as products, markets, and behaviors do —
+            helping teams see not just what happened, but why it happened and what will happen next.
+        </p>
+    </div>
 
     <p class="body pad-top">
         Here’s why it works across every engagement:
@@ -411,17 +421,7 @@
     </section>
   </main>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <p class="footer-copy">
-            © <span id="year"></span> UX Agentic. All rights reserved.
-            </p>
-            <nav class="footer-nav" aria-label="Footer navigation">
-            <a href="#terms">Terms of Service</a>
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#accessibility">Accessibility</a>
-            </nav>
-        </div>
+    <footer id="footer" role="contentinfo">
     </footer>
 
 <script>
