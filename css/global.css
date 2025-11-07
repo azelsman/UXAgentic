@@ -43,7 +43,7 @@ html, body {
 body {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.8rem;
   font-size: 16px;
   background-color: var(--color-background);
   font-weight: 300;
@@ -58,6 +58,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text);
   margin-bottom: var(--spacing-md);
   font-weight: 600;
+}
+h3 {
+  color: var(--color-text-light);
+  font-weight: 500;
 }
 
 p {
@@ -74,14 +78,13 @@ p {
   font-size: 0.85rem;
   color: var(--color-text-light);
   font-style: italic;
-  padding: 1rem 0;
 }
 
 .list {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   color: var(--ink);
-  line-height: 1.1;
+  line-height: 1.5rem;
   margin: 0 0 2rem 2rem;
   padding-left: 0;
   list-style-type: disc;
@@ -117,16 +120,31 @@ p {
 } 
 .text-link:hover {
     text-decoration: underline;
-}  
+}
+.italic {
+    font-style: italic;
+}
+.call-out {
+    font-weight: 300;
+    color: var(--color-text-light);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-md);
+} 
+.quote{
+  padding: var(--spacing-md) 0 var(--spacing-xl) 0;
+} 
 
-.line-break {
-    border-bottom: 1px solid var(--color-rule);
-    padding: 1.3rem 0;
+.kicker { 
+  font-size:.95rem; 
+  font-weight:500; 
+  color: var(--color-text-light); 
+  margin:-.25rem 0 1rem; 
+}
+.meta.center { 
+  text-align:center; 
+  color:#555; 
 }
 
-.pad-top {
-    padding-top: 1.3rem;
-}
 /* Header */
 .site-header {
   background-color: var(--color-background);
@@ -134,7 +152,7 @@ p {
   z-index: 100;
   max-width: 1000px;
   padding-top: 2rem;
-  padding-bottom: 0;
+  padding-bottom: 2rem;
   margin: 0 auto
 }
 
@@ -144,6 +162,9 @@ p {
   align-items: center;
   padding: var(--spacing-md) 0;
 }
+
+/* Override any other logo styles */
+/* Logo styles moved to .nav-container */
 
 .nav-container a:focus {
   outline: 2px solid var(--color-focus);
@@ -169,9 +190,16 @@ a:has(.logo):focus {
   border-radius: var(--border-radius);
 }
 
-img.logo {
-  height: clamp(6rem, 8vw + 2rem, 9rem);
+.nav-container img.logo {
+  height: 75px;
   width: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nav-container img.logo {
+    height: 80px;
+  }
 }
 
 
@@ -252,7 +280,7 @@ a.button-primary:focus {
 
 /* Hero Section */
 .hero {
-  padding: 0 0 var(--spacing-xl) 0;
+  padding: 0;
 }
 
 .hero-grid {
@@ -590,6 +618,34 @@ a[href]::after {
         grid-template-columns: repeat(2, 1fr);
         align-items: start;
     }
+}
+
+/* utility classes */
+.visually-hidden {
+   display: none;
+}
+.line-break {
+    border-bottom: 1px solid var(--color-rule);
+    padding: 1.3rem 0;
+}
+.break {
+  padding: 2.6rem 0 0 0;
+}
+.pad-top {
+    padding-top: 1.3rem;
+}
+.pad-bottom {
+    padding-bottom: 1.3rem;
+}
+
+/* CTA Container */
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: start;
+    flex-wrap: wrap;
+    margin: var(--spacing-lg) 0;
 }
 
 /* form */
