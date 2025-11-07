@@ -6,6 +6,7 @@
   --muted: #73858f;
   --primary: #193E9B;
   --color-primary: #193E9B;
+  --color-focus: #406DC6;
   --color-text: #2c353d;
   --color-text-light: #445561;
   --color-background: #ffffff;
@@ -144,11 +145,28 @@ p {
   padding: var(--spacing-md) 0;
 }
 
+.nav-container a:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--color-text);
+}
+
+/* Logo link focus state */
+a:has(.logo) {
+  display: inline-block; /* Ensures the focus ring wraps the image */
+}
+
+a:has(.logo):focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
 }
 
 img.logo {
@@ -159,7 +177,8 @@ img.logo {
 
 
 /* Button Styles */
-.button {
+.button,
+.button-primary {
   display: inline-flex; /* hug content */
   padding: 10px 20px;
   justify-content: center;
@@ -170,15 +189,21 @@ img.logo {
   color: #ffffff;
   width: auto;
   white-space: nowrap; /* prevent line breaks so button fits text */
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  text-decoration: none;
 }
-.button-primary {
-    background: var(--color-primary);
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color var(--transition);
+
+.button:focus,
+.button-primary:focus,
+a.button:focus,
+a.button-primary:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  text-decoration: none;
 }
 .button-secondary {
     background: var(--color-gray-200);
@@ -192,6 +217,12 @@ img.logo {
 
 .button:hover {
   background-color: #0052a3;
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  text-decoration: none;
 }
 
 .button-outline {
@@ -469,8 +500,20 @@ img.logo {
 }
 
 :focus {
-  outline: 3px solid var(--color-primary);
+  /* Restore default focus ring as fallback */
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
+}
+
+/* Enhance focus styles for keyboard navigation */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Text links get underline */
+a:not([class]):focus {
+  text-decoration: underline;
+  outline: 2px solid var(--color-focus);
 }
 
 /* Responsive Design */
@@ -576,6 +619,14 @@ a[href]::after {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-focus);
+    box-shadow: 0 0 10px 0 rgba(92, 120, 220, 0.32);
   }
   .contact-form textarea {
     min-height: 140px;
@@ -589,10 +640,16 @@ a[href]::after {
     border-radius: var(--border-radius);
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color var(--transition);
+    transition: background-color var(--transition), box-shadow var(--transition);
     width: 100%; /* Full width on small screens */
     align-self: stretch;
     font-size: 1.15rem;
+  }
+
+  button:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    text-decoration: none;
   }
  
 
