@@ -373,7 +373,7 @@ a.button-primary:focus {
 }
 
 .product-card-img {
-  width: 300px;
+  width: 400px;
   object-fit: contain;
   margin-bottom: var(--spacing-md);
 }
