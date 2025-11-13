@@ -331,6 +331,14 @@ a.button-primary:focus {
   overflow: hidden;
 }
 
+/* Constrain single images to max 350px height, allow natural width */
+.img-card > .card-image {
+  max-height: 350px;
+  width: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 
 .card-image {
   width: 100%;
@@ -693,7 +701,7 @@ a[href]::after {
     min-height: 140px;
     resize: vertical;
   }
- button {
+ button.button.primary-button {
     padding: 12px 20px;
     background-color: var(--color-primary);
     color: #fff;

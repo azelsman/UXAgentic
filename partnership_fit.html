@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UX Agentic — Partnership Fit Discovery</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <script src="js/global.js" defer></script>
+<body>
+  <header id="header" role="banner">
+  </header>
+
+  <main id="main" class="main">
+    <section class="frame section" aria-labelledby="fit-title" aria-describedby="fit-desc">
+        <h1 id="fit-title" class="h2">Explore Partnership Fit for the Experience Accelerator</h1>
+
+        <p id="fit-desc" class="body">
+            Tell us a bit about your product and where you’re feeling friction.
+            We’ll review and respond within one business day with next steps.
+        </p>
+
+        <form
+            action="https://formspree.io/f/xvgdgllb"
+            method="POST"
+            class="contact-form"
+        >
+            <input type="hidden" name="_redirect" value="https://uxagentic.ai/experience_accelerator_confirmation.html">
+            <div class="form-row">
+            <label for="name" class="body">Name</label>
+            <input id="name" name="name" type="text" class="input"
+                    autocomplete="name" required aria-required="true">
+            </div>
+
+            <div class="form-row">
+            <label for="email" class="body">Work email</label>
+            <input id="email" name="email" type="email" class="input"
+                    autocomplete="email" required aria-required="true">
+            </div>
+
+            <div class="form-row">
+            <label for="role" class="body">Role</label>
+            <input id="role" name="role" type="text" class="input"
+                    placeholder="Founder, Head of Product, UX Lead…">
+            </div>
+
+            <div class="form-row">
+            <label for="company" class="body">Company</label>
+            <input id="company" name="company" type="text" class="input"
+                    autocomplete="organization">
+            </div>
+
+            <div class="form-row">
+            <label for="product" class="body">Product link (if available)</label>
+            <input id="product" name="product" type="url" class="input"
+                    placeholder="https://">
+            </div>
+
+            <div class="form-row">
+            <label for="challenge" class="body">What’s the main friction you’re trying to solve?</label>
+            <textarea id="challenge" name="challenge" rows="4" class="input"
+                        required aria-required="true"></textarea>
+            </div>
+
+            <div class="form-row">
+            <label for="timeline" class="body">Ideal timeline for change</label>
+            <input id="timeline" name="timeline" type="text" class="input"
+                    placeholder="e.g., next 30–60 days">
+            </div>
+
+            <div class="form-row">
+            <label for="heard" class="body">How did you find UX Agentic?</label>
+            <input id="heard" name="heard" type="text" class="input"
+                    placeholder="LinkedIn, referral, search…">
+            </div>
+
+            <input type="hidden" name="form_context"
+                value="Experience Accelerator Partnership Fit">
+
+            <div class="cta-container" style="margin-top:1rem;">
+            <button type="submit" class="button primary-button"
+                    aria-label="Submit your details for Experience Accelerator partnership review">
+                Submit for Partnership Review
+            </button>
+            </div>
+
+            <p class="tiny-center" style="margin-top:.5rem;">
+            We’ll review your submission and follow up within one business day with next steps.
+            </p>
+        </form>
+    </section>
+  </main>
+
+    <footer id="footer" role="contentinfo">
+    </footer>
+</body>
+</html>
